@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYG9HZ54L2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SYG9HZ54L2');
+</script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Home - Google Drive</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+<style>
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    pointer-events: auto;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: black url(/images/colour-dark-grey-mz-vf.jpg) center center / cover no-repeat fixed;
+    overflow-x: hidden; /* no horizontal scrollbar */
+    overflow-y: auto; /* allow vertical scrolling */
+    min-height: 110vh; /* ensure there's scrollable content */
+  }
+
+  /* Top bar (locked at top) */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 160px;
+    width: calc(100% - 160px);
+    height: 7vw;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(10px) saturate(200%) brightness(70%);
+    padding: 0 1%;
+    z-index: 10000;                /* fixed navbar always on top */
+  }
+  nav img {
+    width: 95px;
+    height: auto;
+    margin-right: 1%;
+    border-radius: 1vw;
+  }
+
+  .title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-wrap h3 {
+    font-size: 4vw;
+    font-weight: 800;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
+
+  .title-wrap .note {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2vw;
+    opacity: 0.85;
+    margin-left: 40px;
+    line-height: 1.3em;
+    text-align: center;
+  }
+
+  /* Game section */
+  .content {
+    margin-top: 0;
+    padding: 2vh 16px 16px 16px;
+    box-sizing: border-box;
+  }
+  .game-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 82vh;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .game-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(/images/ubackground.png) center center / cover no-repeat;
+    z-index: 0;
+  }
+  .game-wrap iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    z-index: 1;
+  }
+
+
+  .vibrant-text {
+    font-weight: 800;
+    font-size: 120px;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 242, 255, 0.8),   /* cyan */
+      rgba(95, 13, 237, 0.8),   /* purple */
+      rgba(0, 242, 255, 0.8)    /* cyan again for loop */
+    );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+      0 0 4px rgba(0, 242, 255, 0.8),
+      0 0 20px rgba(95, 13, 237, 0.8);
+    animation: waveGradient 5s ease infinite;
+    margin: 0;
+  }
+
+  .vibrant-text.small {
+    font-size: 60px;
+    font-weight: 700;
+    margin-top: 30px;     
+    letter-spacing: 2px;  
+  }
+
+  @keyframes waveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .neon-rule {
+    position: relative;
+    width: 60%;
+    height: 3px;
+    margin: 30px auto 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 242, 255, 0) 0%,         /* transparent edges */
+      rgba(0, 242, 255, 0.35) 15%,     /* cyan start */
+      rgba(0, 242, 255, 0.85) 30%,     /* bright cyan */
+      rgba(95, 13, 237, 0.7) 50%,      /* purple accent in the center */
+      rgba(0, 242, 255, 0.85) 70%,     /* bright cyan again */
+      rgba(0, 242, 255, 0.35) 85%,     /* fade cyan */
+      rgba(0, 242, 255, 0) 100%        /* fade out */
+    );
+    transform: translateZ(0);
+  }
+
+  .neon-rule::before {
+    content: "";
+    position: absolute;
+    inset: -4px 0;
+    background: inherit;
+    filter: blur(5px);          /* softer glow */
+    opacity: 0.55;              /* reduced glow intensity */
+    pointer-events: none;
+  }
+
+
+      /* Left Ad Rail */
+      .ad-rail-left {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 160px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+      }
+
+      .ad-rail-left .ad-container {
+        position: sticky;
+        top: 0;
+        width: 160px;
+        height: 600px;
+      }
+
+      /* Shift page content to the right of ad rail */
+      body {
+        margin-left: 160px !important;
+      }
+
+
+      /* Top right banner ad */
+
+      /* Force no rounded corners on ad iframes */
+      .ad-rail-left iframe,
+      .ad-container iframe,
+      .top-right-banner iframe {
+        border-radius: 0 !important;
+      }
+
+      .top-right-banner {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 728px;
+        height: 90px;
+        z-index: 10001;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+      }
+</style>
+
+</head>
+
+<body>
+
+<!-- Left Ad Rail -->
+<div class="ad-rail-left">
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '60d8f46060c0b8cc1916b42e58bbaa32',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="//creaturefeaturesmouse.com/60d8f46060c0b8cc1916b42e58bbaa32/invoke.js"
+    ></script>
+  </div>
+</div>
+
+<!-- Top Right Banner Ad -->
+<div class="top-right-banner">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : 'aeb0dc35e1a9a93d2ad33966d116c87a',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script
+    type="text/javascript"
+    src="//creaturefeaturesmouse.com/aeb0dc35e1a9a93d2ad33966d116c87a/invoke.js"
+  ></script>
+</div>
+
+    <nav>
+    <a class="logo-link" data-href="/" style="cursor:pointer;">
+      <img alt="logo" src="/images/logo.png"/>
+    </a>
+    <div class="title-wrap">
+      <h3>NebulaPlay</h3>
+      <span class="note">Click the controller icon,<br>then reset for keybinds.<br><br>Click the disk icon to save progress.</span>
+    </div>
+      </nav>
+
+  <div class="content">
+      <div style="text-align:center; padding-top:150px; padding-bottom:150px; font-family:'Montserrat', sans-serif;">
+    <h1 class="vibrant-text">Pokémon White 2</h1>
+    <h2 class="vibrant-text small">CTRL+D</h2>
+    <div class="neon-rule"></div>
+  </div>
+
+  <div class="game-wrap">
+      <iframe sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups allow-modals"
+        allow="fullscreen; autoplay; clipboard-read; clipboard-write; gamepad; xr-spatial-tracking; picture-in-picture" data-delayed-src="/storage/clpokewhite2.html">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    // Logo click same tab
+    document.querySelectorAll('.logo-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        window.location.href = link.dataset.href;
+      });
+    });
+
+    // Disable right-click
+    document.addEventListener("contextmenu", e => e.preventDefault());    // Delay game loading by 2 seconds
+    setTimeout(() => {
+      const gameIframe = document.querySelector('iframe[data-delayed-src]');
+      if (gameIframe) {
+        gameIframe.src = gameIframe.getAttribute('data-delayed-src');
+      }
+    }, 5000);
+      // Add random symbols to URL
+    (function() {
+      const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let randomStr = '';
+      for (let i = 0; i < 30 + Math.floor(Math.random() * 20); i++) {
+        randomStr += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      const newUrl = window.location.pathname + '?' + randomStr;
+      window.history.replaceState({}, '', newUrl);
+    })();
+  </script>
+
+</body>
+</html>
